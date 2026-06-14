@@ -72,7 +72,7 @@ La aportación de esta actividad: las microinteracciones son la diferencia entre
 
 Las prácticas se desarrollaron en el grupo **DIU3-DarkPatterns** con el hilo conductor de analizar dark patterns en interfaces de restaurantes digitales y proponer **ClearBurger** como alternativa ética. A continuación, las aportaciones metodológicamente más relevantes.
 
-#### P1 - UX Research: del dark pattern al insight de diseño
+#### P1 - UX Research: del dark pattern al insight de diseño — [ver entregables](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P1/DIUP1/README.md)
 
 El análisis de Goiko.com aplicó la taxonomía de Brignull (2010): *hidden costs*, *forced continuity*, *disguised ads*. Identificamos que la dificultad de localizar alérgenos e ingredientes completos, y la opacidad en precios hasta etapas avanzadas del flujo, no son errores de diseño sino decisiones deliberadas para reducir la capacidad de decisión informada del usuario.
 
@@ -80,25 +80,25 @@ La **Usability Review de Goiko.com obtuvo 70/100** ("Good"), con fortalezas en c
 
 **Aportación metodológica:** aprendí a distinguir entre "el producto tiene problemas" y "este problema específico impide que este usuario complete este objetivo concreto". La especificidad del hallazgo determina la utilidad del diagnóstico y la prioridad de la solución.
 
-#### P2 - Arquitectura de información y Double Diamond
+#### P2 - Arquitectura de información y Double Diamond — [ver entregables](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P2/README.md)
 
 El Empathy Map y el Scope Canvas formalizaron la propuesta de valor de ClearBurger: *transparencia de ingredientes + agilidad de personalización*. El proceso de Sitemap y Labelling aplicó el principio de que cada etiqueta debe ser el término que el usuario utilizaría, no el que prefiere el equipo de desarrollo. Los wireframes lo-fi (4 pantallas, desktop 1440px, retícula 12 columnas) validaron la arquitectura informativa antes de invertir en diseño visual.
 
 Definir el problema (Double Diamond fases 1-2) antes de comprometerse con la solución (fases 3-4) es la disciplina más difícil de mantener bajo presión de tiempo y la más crítica para evitar rediseños costosos.
 
-#### P3 - Identidad visual y Atomic Design
+#### P3 - Identidad visual y Atomic Design — [ver entregables](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P3/readme.md)
 
 La identidad de ClearBurger (dark mode, rojo carmín #D92525, negro #1A1A1A, Montserrat Bold + Inter) se formalizó como un **Design System con metodología Atomic Design** (Brad Frost): átomos (Button, Tag, Input), moléculas (SearchBar, IngredientButton), organismos (Navbar flotante, Footer).
 
 El valor del Design System no es estético sino semántico: los tokens de color (background-primary, surface-card, text-muted) permiten cambiar el tema completo sin tocar componentes. Esto implementa directamente la heurística de Nielsen de Consistencia y Estándares (#4): el usuario no debería cuestionarse si elementos similares significan cosas distintas. El Design System garantiza que nunca lo hagan.
 
-#### P4 - Implementación React: Atomic Design en código
+#### P4 - Implementación React: Atomic Design en código — [ver entregables](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P4/readme.md)
 
 La arquitectura del proyecto React + Vite + Tailwind CSS + shadcn/ui replicó la jerarquía del Design System en código: `components/atoms/`, `molecules/`, `organisms/`, `pages/`. Las 4 páginas implementadas (Home, Carta con filtrado en tiempo real, Customizar hamburguesa con precio dinámico, Reservar con validación inline) y Storybook para documentación de componentes.
 
 La paridad entre Figma y React no es automática; requiere disciplina de nombrado compartido y tokens de diseño como variables en lugar de valores hardcodeados. El resultado - [clearburger-diu3.surge.sh](https://clearburger-diu3.surge.sh) - es una implementación frontend completa desplegada para poder evaluarla con usuarios reales. A diferencia de un prototipo en Figma, el código funciona en distintos navegadores y tamaños de pantalla, lo que permite detectar problemas de comportamiento real que el diseño estático no revela.
 
-#### P5 - Evaluación: SUS, Eye Tracking y A/B Testing
+#### P5 - Evaluación: SUS, Eye Tracking y A/B Testing — [ver entregables](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P5/readme.md)
 
 La evaluación con 3 usuarios produjo resultados cuantitativos concretos:
 
@@ -214,6 +214,32 @@ La web de Nuestras Huertas comunica bien sus valores (sostenibilidad, proximidad
 | Origen productos | Sierra de Madrid | Productores locales Granada (km 0) |
 
 El Ecomercado UGR no necesita replicar el modelo de ecommerce de Nuestras Huertas. Necesita una plataforma ligera que resuelva tres problemas concretos: **descubrimiento** (qué productores vienen al próximo mercado), **anticipación** (qué productos habrá), y **reducción de fricción** (poder reservar antes de ir para no quedarse sin producto).
+
+#### Personas objetivo
+
+**Clara Vega - 22 años - Estudiante de Biología, 3er curso**
+
+> "Me interesa comer mejor pero no sé por dónde empezar ni qué va a haber en el mercado hasta que llego y ya no queda nada."
+
+| | |
+|---|---|
+| **Dispositivo** | iPhone, apps para todo |
+| **Contexto** | Vive cerca del campus, come en la cafetería la mayoría de días, quiere incorporar más producto fresco local |
+| **Motivacion** | Curiosidad por la alimentacion ecologica; le atrae la idea del km 0 pero no tiene habito de mercado fisico |
+| **Frustracion principal** | Llega al mercado y ya no queda lo que buscaba; no habia forma de saber que traeria cada productor ese dia |
+| **Objetivo en la plataforma** | Consultar antes de salir que productores van y reservar un producto sin necesidad de crearse una cuenta |
+
+**Marcos Ruiz - 41 años - Tecnico de laboratorio, UGR**
+
+> "Ya conozco el Ecomercado pero a veces no puedo desplazarme hasta tener claro que va a estar el productor que busco."
+
+| | |
+|---|---|
+| **Dispositivo** | Android, uso funcional del movil |
+| **Contexto** | Asiste al mercado de forma regular; tiene preferencia por 2-3 productores concretos de confianza |
+| **Motivacion** | Fidelidad al producto local y a la relacion directa con el productor; valora la trazabilidad del origen |
+| **Frustracion principal** | No hay forma de saber si su productor habitual va a estar disponible ese jueves antes de ir |
+| **Objetivo en la plataforma** | Ver que productores confirman asistencia al proximo mercado y reservar para recoger en su franja horaria |
 
 #### Propuesta de valor
 
