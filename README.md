@@ -116,17 +116,17 @@ El eye tracking confirmó la hipótesis de jerarquía atencional diferencial por
 
 ### Bloque C — Autovaloración
 
-| Área de competencia | Nivel | Justificación |
-|---|---|---|
-| Evaluación heurística | **Alto** | Aplicada en E4 (Heurio), P1 (Goiko 70/100) y P5 (Usability Report Goiko Finder) |
-| Investigación de usuario | **Medio-Alto** | E1 (etnografía observacional), P1 (personas, journey maps, user research plan) |
-| Diseño de sistema visual | **Alto** | P3: Design System Atomic completo en Figma; tokens semánticos; Hi-Fi 4 pantallas |
-| Accesibilidad (WCAG 2.1) | **Medio** | E5 (auditoría 32/100) y P5 (auditoría Goiko Finder). Falta práctica en implementación técnica en código |
-| Métricas cuantitativas | **Medio** | P5 ejecutado con SUS, A/B, eye tracking, pero n=3 limita la validez estadística |
-| Implementación frontend | **Alto** | P4 en producción con Atomic Design, pero el ciclo diseño→código→prueba podría ser más iterativo |
-| Ética de diseño / anti dark-patterns | **Alto** | Hilo conductor de todo el proyecto; capacidad demostrada de identificar y evitar patrones manipulativos |
+La asignatura me ha permitido desarrollar una visión integral del proceso UX que va más allá de la evaluación o del diseño en aislamiento: he recorrido el ciclo completo desde la investigación con usuarios reales hasta un producto desplegado en producción. Esa completitud es, en mi opinión, la aportación más diferencial de mi experiencia en DIU.
 
-**Área de mejora principal:** la evaluación cuantitativa con muestras representativas. Los estudios SUS con n=3 orientan el diseño pero no permiten generalizaciones estadísticas. Un UX profesional necesita n≥8-10 usuarios para detectar el 80-85% de los problemas de usabilidad (Nielsen, 1993) y combinar métricas cuantitativas (SUS, Task Completion Rate, Time-on-Task) con análisis cualitativos (think-aloud protocol, entrevistas post-tarea).
+Partiendo de la formación técnica propia de la Ingeniería del Software, el trabajo en esta asignatura me ha añadido una capa de rigor metodológico que transforma la manera de abordar un problema de diseño: antes de escribir una línea de código, tengo ahora herramientas para entender a quién va dirigido el producto, qué necesita realmente y cómo validar si lo construido resuelve ese problema. La etnografía (E1), las personas (P1) y la evaluación heurística (E4) son la misma disciplina de investigación aplicada en contextos distintos, y los tres apuntan al mismo principio: las decisiones de diseño deben estar fundadas en evidencia, no en la intuición del desarrollador.
+
+En diseño de sistemas, el Design System de ClearBurger (P3) me ha dado competencia real en Atomic Design: no como concepto teórico sino como método de trabajo que mantiene la coherencia cuando el proyecto escala. Sé construir un sistema de tokens semánticos que vive simultáneamente en Figma y en Tailwind CSS, y eso es lo que separa un prototipo de un producto mantenible a largo plazo.
+
+Donde considero que mi perfil es genuinamente diferencial es en la capacidad de cerrar el ciclo **diseño → implementación** sin fricción ni pérdida de fidelidad. ClearBurger no es un mockup de Figma: es una aplicación React 19 en producción —[clearburger-diu3.surge.sh](https://clearburger-diu3.surge.sh)— con Storybook documentando cada componente del Design System y con Atomic Design reflejado fielmente en la arquitectura de carpetas. Muy pocos perfiles UX pueden implementar lo que diseñan, y muy pocos perfiles de desarrollo tienen la sensibilidad para aplicar un sistema de diseño correctamente en código. Haber hecho ambas cosas en el mismo proyecto me da una comprensión directa de la brecha diseño-desarrollo que en equipos profesionales suele ser fuente de inconsistencias.
+
+En evaluación, la experiencia de P5 —SUS, eye tracking y A/B testing aplicados tanto a ClearBurger como al proyecto evaluado (Goiko Finder)— me ha dado criterio para interpretar métricas cuantitativas de usabilidad en contexto: un SUS de 83.3 sobre ClearBurger, combinado con una tasa de éxito del 100% y con los patrones de eye tracking observados, es un conjunto de señales coherente entre sí. Saber leer ese conjunto de señales complementarias, y no depender de un único número aislado, es el criterio que diferencia una evaluación UX madura de una puramente mecánica.
+
+En conjunto, considero que he alcanzado un nivel de competencia UX que integra tres dimensiones que raramente se trabajan de forma conjunta: investigación de usuario, diseño visual sistematizado y capacidad de implementación técnica del producto resultante.
 
 ---
 
