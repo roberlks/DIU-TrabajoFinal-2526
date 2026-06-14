@@ -268,6 +268,18 @@ El Ecomercado UGR no necesita replicar el modelo de ecommerce de Nuestras Huerta
 2. **Confirmar franja de recogida** (10:00-11:00 / 11:00-12:00 / 12:00-14:00)
 3. **Resumen + codigo QR de recogida**, sin registro obligatorio para el primer uso
 
+#### Prototipo hi-fi - PWA desplegada
+
+El prototipo funcional completo esta desplegado en [ecomercado-ugr-diu3.surge.sh](https://ecomercado-ugr-diu3.surge.sh). Implementado en React 18 + Vite + Tailwind CSS con HashRouter para soporte en hosting estatico.
+
+| Wireframe | Home | Listado categoría |
+|:---:|:---:|:---:|
+| ![Wireframe anotado](img/propuesta/01-wireframe.png) | ![Pantalla principal](img/propuesta/02-home.png) | ![Listado de verduras](img/propuesta/03-listado.png) |
+
+| Detalle de producto | Confirmacion de reserva | Perfil del productor |
+|:---:|:---:|:---:|
+| ![Detalle producto](img/propuesta/04-detalle.png) | ![Confirmacion con QR](img/propuesta/05-confirmacion.png) | ![Productor - Huerta La Vega](img/propuesta/06-productor.png) |
+
 #### Decisiones de diseño justificadas
 
 | Decision | Justificación |
