@@ -1,8 +1,6 @@
 import { Bell, ArrowLeft, Calendar, Users, ShoppingBag, MapPin, Clock, Tag, Info, Plus, Minus, CheckCircle, ChevronRight } from "lucide-react";
 import { HashRouter, Routes, Route, useNavigate } from "react-router";
 
-/* MARKER-MAKE-KIT-INVOKED — no kit packages present, using custom design tokens */
-
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const C = {
   primary: "#2D6A4F",
