@@ -24,9 +24,9 @@ A lo largo de la asignatura he recorrido el proceso completo de DCU (Diseño Cen
 
 #### E1 - Etnografía (Estación Granada Metro)
 
-La observación contextual en la Estación de Granada Metro aplicó el primer principio del DCU: investigar al usuario en su entorno real antes de diseñar nada. La aportación metodológica principal fue constatar la brecha entre lo que un usuario *dice* que haría y lo que *realmente* hace cuando se enfrenta a la interfaz física. Se identificaron fricciones concretas: paneles de información con contraste insuficiente, ausencia de señalización redundante para usuarios con discapacidad auditiva, y flujos de movimiento que entraban en conflicto con la disposición de las máquinas de validación. Varios usuarios validaban el billete en la zona de salida por error, un fallo de *affordance* en términos de Norman: la acción correcta no resultaba la más perceptualmente obvia.
+La observación contextual en la Estación de Granada Metro aplicó el primer principio del DCU: investigar al usuario en su entorno real antes de diseñar nada. La aportación principal fue constatar la brecha entre lo que un usuario *dice* que haría y lo que *realmente* hace frente a la interfaz física: fricciones de contraste, ausencia de señalización redundante para personas con discapacidad auditiva, y flujos de movimiento en conflicto con la disposición del espacio — fallos de *affordance* que no habría detectado ningún cuestionario previo.
 
-Esta actividad conecta con la fase *Discover* del Double Diamond: sin observación directa, el diseñador opera sobre suposiciones. La etnografía las reemplaza por evidencia.
+Esta actividad conecta con la fase *Discover* del Double Diamond: sin observación directa, el diseñador opera sobre suposiciones.
 
 #### E2 - Moodboard (Castell de Ferro)
 
@@ -46,25 +46,13 @@ La aplicación de las 10 heurísticas de Nielsen en la plataforma Heurio consoli
 
 #### E5 - Accesibilidad (Ayuntamiento de A Coruña) - **32/100 INSUFICIENTE**
 
-Esta fue la actividad más reveladora de la asignatura. El análisis del sitio del Ayuntamiento de A Coruña con herramientas WAVE y revisión manual arrojó una puntuación de 32/100, poniendo en evidencia que la "accesibilidad declarada" (la web tiene una página titulada "Accesibilidad") no implica accesibilidad real. Es lo que en el campo se denomina *accessibility theatre*.
+El análisis del Ayuntamiento de A Coruña con WAVE y revisión manual arrojó 32/100, poniendo en evidencia que tener una página titulada "Accesibilidad" no implica accesibilidad real — lo que en el campo se llama *accessibility theatre*. Los criterios WCAG 2.1 AA incumplidos cubrían tanto el nivel más básico (botones sin `aria-label`, formularios sin `<label>`, contraste insuficiente) como el estructural (tab order no lineal, HTML incomprensible sin estilos). Según la normativa **UNE-EN 301549** (vinculante para administraciones públicas desde 2020), este sitio incumpliría su obligación legal.
 
-Los hallazgos, categorizados por criterio WCAG 2.1 nivel AA:
-
-| Criterio WCAG | Problema detectado | Impacto en usuario |
-|---|---|---|
-| **1.1.1 Contenido no textual** | Botones sin `aria-label` (confirmado con WAVE) | Usuario con lector de pantalla no puede identificar la acción |
-| **1.4.3 Contraste mínimo (4.5:1)** | Texto secundario y placeholders bajo ratio mínimo | Usuario con baja visión no puede leer el contenido |
-| **1.3.1 Información y relaciones** | Formularios sin `<label>` vinculadas | Tecnologías de asistencia no asocian campo y etiqueta |
-| **2.4.3 Orden del foco** | Tab order no lineal y confuso | Navegación por teclado no completable de forma lógica |
-| **4.1.2 Nombre, función, valor** | HTML pobre sin CSS/JS: página incomprensible sin estilos | Incumplimiento del criterio de robustez más fundamental |
-
-La conclusión es que la accesibilidad debe ser un **requisito funcional desde la fase de diseño**, no un parche posterior. Según la normativa **UNE-EN 301549** (vinculante para administraciones públicas españolas desde 2020), este sitio incumpliría su obligación legal. Esta actividad me formó para tratar la accesibilidad como criterio de aceptación, no como mejora opcional.
+La aportación principal no fue el diagnóstico en sí, sino la comprensión de que la accesibilidad tiene que entrar como criterio de aceptación en la fase de diseño, no como revisión posterior. Un problema de contraste detectado en Figma se resuelve en segundos; detectado en producción, puede requerir rediseño completo.
 
 #### E6 - Microinteracción (Figma - [ver publicado](https://seam-listen-32659141.figma.site/))
 
-El diseño de microinteracciones aplicó los principios de feedback visual de Norman: cada acción del usuario necesita una respuesta perceptible del sistema que confirme que fue registrada. Los estados hover/active/focus y las animaciones de transición no son decoración; son el mecanismo de comunicación que elimina la incertidumbre y reduce la carga cognitiva. Un botón que no cambia visualmente al pulsarse viola la heurística de Nielsen #1 (visibilidad del estado): el usuario no sabe si su acción tuvo efecto.
-
-La aportación de esta actividad: las microinteracciones son la diferencia entre un producto que se siente "vivo y responsivo" y uno que se siente "roto y lento", incluso cuando el tiempo de respuesta técnico es idéntico.
+El diseño de microinteracciones aplicó los principios de feedback visual de Norman: cada acción necesita una respuesta perceptible del sistema. Los estados hover/active/focus y las transiciones no son decoración; son el mecanismo que elimina la incertidumbre. Un botón que no cambia visualmente al pulsarse viola la heurística #1 de Nielsen: el usuario no sabe si su acción tuvo efecto. Las microinteracciones son la diferencia entre un producto que se siente "vivo" y uno que se siente "roto", incluso cuando el tiempo de respuesta técnico es idéntico.
 
 ---
 
@@ -100,17 +88,9 @@ La paridad entre Figma y React no es automática; requiere disciplina de nombrad
 
 #### P5 - Evaluación: SUS, Eye Tracking y A/B Testing — [ver entregables](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P5/readme.md)
 
-La evaluación con 3 usuarios produjo resultados cuantitativos concretos:
+ClearBurger obtuvo un SUS medio de 83.3 ("Muy buena") frente a 75.0 de Goiko Finder, con tasa de éxito del 100% en ambos casos. La diferencia de tiempos de tarea (55s vs 34s) no refleja un problema de usabilidad sino la complejidad intrínsecamente mayor de personalizar una hamburguesa frente a seleccionar un restaurante. Leer ese matiz — en lugar de concluir que ClearBurger es más lento — es la diferencia entre una evaluación mecánica y una fundamentada.
 
-| Métrica | ClearBurger (Caso A) | Goiko Finder (Caso B) |
-|---|---|---|
-| **SUS medio** | **83.3** ("Muy buena") | 75.0 ("Buena") |
-| **Tiempo medio de tarea** | 55.3 s | 34.7 s |
-| **Tasa de éxito** | 3/3 (100%) | 3/3 (100%) |
-
-La diferencia de tiempos se explica por la complejidad intrínseca de la tarea A (personalizar hamburguesa con múltiples dimensiones) frente a la tarea B (seleccionar restaurante). El SUS de 83.3 para ClearBurger, combinado con el 100% de tasa de éxito, valida que la arquitectura sin dark patterns y con transparencia informativa produce una experiencia subjetivamente superior medible con escala estandarizada.
-
-El eye tracking confirmó la hipótesis de jerarquía atencional diferencial por edad: los usuarios jóvenes (P1, P2) aplicaron scanning rápido en patrón F; P3 (52 años, competencia digital media) leyó todo el contenido linealmente. Esta diferencia implica que el diseño debe ser eficiente para el experto sin excluir al usuario menos familiarizado, un reto de diseño adaptativo que ClearBurger abordó con su navegación simplificada.
+El eye tracking reveló jerarquía atencional diferencial por edad: los usuarios jóvenes (P1, P2) escanearon en patrón F; P3 (52 años) leyó linealmente todo el contenido. Esto implica que el diseño debe ser eficiente para el experto sin excluir al usuario menos digitalizado, un equilibrio que ClearBurger abordó con una navegación simplificada y sin atajos ocultos.
 
 ---
 
