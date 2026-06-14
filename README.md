@@ -92,15 +92,11 @@ La identidad de ClearBurger (dark mode, rojo carmín #D92525, negro #1A1A1A, Mon
 
 El valor del Design System no es estético sino semántico: los tokens de color (background-primary, surface-card, text-muted) permiten cambiar el tema completo sin tocar componentes. Esto implementa directamente la heurística de Nielsen de Consistencia y Estándares (#4): el usuario no debería cuestionarse si elementos similares significan cosas distintas. El Design System garantiza que nunca lo hagan.
 
-#### P4 - Implementación React: del Design System al código desplegado
+#### P4 - Implementación React: Atomic Design en código
 
-La práctica más técnicamente exigente del curso. La arquitectura React 18 + Vite + Tailwind CSS v4 + shadcn/ui replicó de forma deliberada la jerarquía del Design System de Figma en la estructura de carpetas: `components/atoms/` (Button, Tag, Input, Badge), `molecules/` (SearchBar, IngredientButton, PriceTag), `organisms/` (Navbar flotante, Footer, MenuCard). El nombrando de componentes en código es idéntico al de los frames en Figma; cualquier cambio de diseño se localiza inmediatamente.
+La arquitectura del proyecto React + Vite + Tailwind CSS + shadcn/ui replicó la jerarquía del Design System en código: `components/atoms/`, `molecules/`, `organisms/`, `pages/`. Las 4 páginas implementadas (Home, Carta con filtrado en tiempo real, Customizar hamburguesa con precio dinámico, Reservar con validación inline) y Storybook para documentación de componentes.
 
-Las 4 páginas implementadas van más allá de reproducciones estáticas: la **Carta** tiene filtrado de alérgenos en tiempo real con estado React, el **Customizador** recalcula el precio total a medida que el usuario añade/quita ingredientes, y el **formulario de Reserva** tiene validación inline campo a campo. Storybook v10 documenta cada componente con sus variantes, estados (hover/focus/disabled/loading) y tokens de color asociados.
-
-La paridad Figma-React no es automática: requiere que los tokens de color sean variables CSS en lugar de valores hardcodeados, que las unidades de espaciado coincidan entre el grid de Figma y las clases Tailwind, y que los estados de interacción (hover, focus, error) estén especificados en el diseño antes de implementarse. Haber hecho ese proceso de extremo a extremo me dio una comprensión concreta de por qué los handoffs diseño-desarrollo suelen ser fuente de inconsistencias en equipos que no comparten tokens.
-
-El resultado - [clearburger-diu3.surge.sh](https://clearburger-diu3.surge.sh) - es una implementación frontend completa y accesible desde cualquier dispositivo, lo que permitió hacer la evaluación de P5 con usuarios reales sobre código real en lugar de sobre clics en Figma.
+La paridad entre Figma y React no es automática; requiere disciplina de nombrado compartido y tokens de diseño como variables en lugar de valores hardcodeados. El resultado - [clearburger-diu3.surge.sh](https://clearburger-diu3.surge.sh) - es una implementación frontend completa desplegada para poder evaluarla con usuarios reales. A diferencia de un prototipo en Figma, el código funciona en distintos navegadores y tamaños de pantalla, lo que permite detectar problemas de comportamiento real que el diseño estático no revela.
 
 #### P5 - Evaluación: SUS, Eye Tracking y A/B Testing
 
@@ -272,49 +268,15 @@ El Ecomercado UGR no necesita replicar el modelo de ecommerce de Nuestras Huerta
 2. **Confirmar franja de recogida** (10:00-11:00 / 11:00-12:00 / 12:00-14:00)
 3. **Resumen + codigo QR de recogida**, sin registro obligatorio para el primer uso
 
-#### Prototipo hi-fi - PWA implementada y desplegada
+#### Implementacion y publicacion
 
-El prototipo no es un mockup en Figma: es una **SPA React funcional** con routing real, estilos en codigo, componentes reutilizables y deploy publico. Cualquier evaluador puede usarla desde el movil exactamente igual que un usuario real.
+El trabajo no se quedó en wireframe y propuesta escrita. Partiendo del diseño, se llevó la propuesta a una implementacion funcional real: una aplicacion web con navegacion entre pantallas, flujo de reserva completo y publicacion en una URL publica accesible desde cualquier dispositivo.
 
-**Deploy:** [ecomercado-ugr-diu3.surge.sh](https://ecomercado-ugr-diu3.surge.sh) | **Codigo fuente:** `Eco-Mercado_UGR/`
+Para el desarrollo se combinaron conocimientos propios de React con el uso de herramientas de IA para acelerar el traspaso desde el diseño a codigo, ajustando y adaptando el resultado para que la implementacion reflejara fielmente las decisiones de UX tomadas en la fase de diseño: paleta, jerarquia visual, flujos de navegacion y principios anti dark-pattern definidos en la propuesta.
 
----
+El resultado esta desplegado en [ecomercado-ugr-diu3.surge.sh](https://ecomercado-ugr-diu3.surge.sh) y cubre todas las pantallas del prototipo: home con el proximo mercado, listados por categoria, detalle de producto con reserva, confirmacion con codigo QR y perfil de productor. El codigo fuente se incluye en `Eco-Mercado_UGR/`.
 
-**Stack tecnico**
-
-| Tecnologia | Version | Razon de eleccion |
-|---|---|---|
-| React | 18.3 | Renderizado por componentes, hooks para estado local de carrito/cantidad |
-| Vite | 6.3 | Build < 2s, HMR instantaneo, sin configuracion boilerplate |
-| Tailwind CSS | v4 | Utilidades en linea, sin CSS files separados, zero dead code en build |
-| shadcn/ui | latest | Componentes accesibles (Radix UI) listos, sin opinar sobre estilos |
-| React Router | v7 | HashRouter: compatible con Surge sin configuracion de server-side routing |
-| Surge.sh | - | Deploy con un comando, dominio personalizado gratuito, HTTPS automatico |
-
-**Arquitectura de rutas**
-
-```
-ecomercado-ugr-diu3.surge.sh/
-  #/                            Home (proximo mercado + destacados)
-  #/verduras                    Listado por categoria
-  #/fruta
-  #/lacteos
-  #/conservas
-  #/producto/tomates-rama       Detalle: selector cantidad, precio dinamico
-  #/confirmacion                Reserva confirmada + codigo QR SVG generado en cliente
-  #/productor/huerta-la-vega    Perfil productor: historia, productos, certificacion
-  #/wireframe                   Wireframe anotado con justificacion de decisiones
-```
-
-**Decisiones de implementacion destacadas**
-
-- **Design tokens centralizados:** objeto `C` con todos los colores semanticos (`primary`, `surface`, `textSecondary`...) definido una sola vez. Cualquier cambio de marca afecta las 9 pantallas sin tocar componentes individuales.
-- **MobileShell:** wrapper que fuerza `max-width: 390px` y centra en pantalla. El prototipo se puede ver desde desktop y mantiene proporciones de movil exactas, ideal para evaluacion con usuarios en ordenador.
-- **BottomNav con `useNavigate`:** la navegacion inferior usa el hook de React Router, por lo que el historial del navegador funciona correctamente (boton atras del movil va a la pagina anterior, no sale de la app).
-- **QR generado en cliente:** el codigo QR de la pantalla de confirmacion es un SVG renderizado directamente en JSX con patron de modulos, sin dependencia externa. No hay backend, la reserva es simulada, pero el QR es funcional visualmente.
-- **HashRouter para Surge:** Surge sirve archivos estaticos. Sin server-side rendering, las rutas como `/confirmacion` devuelven 404. HashRouter convierte todas las rutas en `/#/confirmacion`, que el navegador resuelve en cliente. Sin necesidad de fichero `_redirects` ni configuracion adicional.
-
-**Capturas por pagina (390x844px - viewport iPhone 14)**
+**Capturas por pagina (390x844px - movil)**
 
 | Wireframe anotado | Home | Listado categoria |
 |:---:|:---:|:---:|
