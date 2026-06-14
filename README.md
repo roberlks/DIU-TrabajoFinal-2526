@@ -5,8 +5,8 @@
 |---|---|
 | **Autor** | Roberto González Lugo |
 | **Grupo de prácticas** | DIU3 - DarkPatterns |
-| **Repositorio prácticas** | [DIU3-DarkPatterns/UX_CaseStudy](https://github.com/DIU3-DarkPatterns/UX_CaseStudy) |
-| **Prototipo funcional** | [clearburger-diu3.surge.sh](https://clearburger-diu3.surge.sh) |
+| **Repositorio** | [roberlks/DIU-TrabajoFinal-2526](https://github.com/roberlks/DIU-TrabajoFinal-2526) — README fuente de este documento, código del Ecomercado PWA e imágenes utilizadas |
+| **Demo Ecomercado UGR** | [ecomercado-ugr-diu3.surge.sh](https://ecomercado-ugr-diu3.surge.sh) |
 | **Asignatura** | Diseño de Interfaces de Usuario - ETSI Informática, UGR |
 | **Entrega** | 16 Junio 2026 |
 
