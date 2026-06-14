@@ -151,16 +151,24 @@ Se analiza **Huerta Madrid / Nuestras Huertas** ([nuestrashuertas.com](https://w
 
 #### Revisión de Usabilidad - Heurísticas Nielsen
 
+| Homepage (desktop) | Redirect a tienda.nuestrashuertas.com |
+|:---:|:---:|
+| ![Homepage sin catálogo](img/analisis/02-homepage-above-fold.png) | ![Redirect dominio externo](img/analisis/05-redirect-tienda.png) |
+
+| Vista mobile | Footer con bloque de reseñas Google |
+|:---:|:---:|
+| ![Homepage mobile](img/analisis/06-homepage-mobile.png) | ![Footer reseñas](img/analisis/04-footer.png) |
+
 | # | Heurística | Val. | Observación |
 |---|---|---|---|
 | H1 | Visibilidad del estado del sistema | ⚠️ 2/5 | Sin feedback en proceso de suscripción; tienda en dominio externo pierde contexto de sesión |
 | H2 | Correspondencia sistema-mundo real | ✅ 4/5 | Lenguaje natural ("cestas semanales"); iconografía vegetal coherente con el dominio |
-| H3 | Control y libertad del usuario | ⚠️ 2/5 | Redirige a `tienda.nuestrashuertas.com` rompiendo el flujo; sin breadcrumb de retorno |
-| H4 | Consistencia y estándares | ❌ 1/5 | Menú de navegación duplicado **4 veces** en el HTML; logo repetido 3 veces |
+| H3 | Control y libertad del usuario | ⚠️ 2/5 | Redirige a `tienda.nuestrashuertas.com` (captura 2): UI diferente, dominio diferente, sin retorno claro al sitio principal |
+| H4 | Consistencia y estándares | ❌ 1/5 | Menú de navegación duplicado **4 veces** en el HTML; logo repetido 3 veces (verificable con "Ver código fuente") |
 | H5 | Prevención de errores | ➡️ 3/5 | No evaluable sin completar proceso de compra; formulario de suscripción en subdominio |
-| H6 | Reconocimiento antes que recuerdo | ⚠️ 2/5 | Sin catálogo de productos visible en homepage; el usuario debe navegar para descubrir qué comprar |
+| H6 | Reconocimiento antes que recuerdo | ⚠️ 2/5 | Sin catálogo de productos visible en homepage (captura 1): el usuario debe navegar para descubrir qué hay disponible |
 | H7 | Flexibilidad y eficiencia | ❌ 1/5 | Sin filtros; sin compra rápida para usuarios recurrentes; sin atajos de ningún tipo |
-| H8 | Diseño estético y minimalista | ⚠️ 2/5 | Sección de testimonios Google genera ruido visual; redundancia de navegación y logo |
+| H8 | Diseño estético y minimalista | ⚠️ 2/5 | Bloque de reseñas Google embebido genera ruido visual (captura 4); redundancia de navegación y logo |
 | H9 | Recuperación de errores | ➡️ 3/5 | No evaluable en profundidad sin proceso de compra completo |
 | H10 | Ayuda y documentación | ⚠️ 2/5 | Sección "Cómo comprar" existe pero no resuelve las dudas del explorador casual |
 
