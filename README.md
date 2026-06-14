@@ -368,17 +368,37 @@ Las prácticas proporcionaron una base metodológica sólida y la experiencia de
 
 ---
 
-## Referencias
+## Referencias y recursos
 
-- Nielsen, J. (1993). *Usability Engineering*. Academic Press.
-- Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group.
-- Brooke, J. (1996). *SUS: A quick and dirty usability scale*. Usability evaluation in industry, 189(194), 4-7.
-- Frost, B. (2016). *Atomic Design*. Brad Frost Web. http://atomicdesign.bradfrost.com
-- W3C. (2018). *Web Content Accessibility Guidelines (WCAG) 2.1*. W3C Recommendation.
-- Norman, D. (2013). *The Design of Everyday Things* (Revised edition). Basic Books.
-- Brignull, H. (2010). *Dark Patterns: User Interfaces Designed to Trick People*. UX Brighton.
-- Shneiderman, B., Plaisant, C., Cohen, M., Jacobs, S., Elmqvist, N., & Diakopoulos, N. (2018). *Designing the User Interface* (6th ed.). Pearson.
+**Metodologia y textos de referencia**
+
+- Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+- Brooke, J. (1996). *SUS - A quick and dirty usability scale*. Usability Evaluation in Industry.
+- Brignull, H. *Deceptive Design (Dark Patterns)*. https://www.deceptive.design/
+- Frost, B. (2016). *Atomic Design*. https://atomicdesign.bradfrost.com/
+
+**Normativa y estandares de accesibilidad**
+
+- W3C. (2018). *Web Content Accessibility Guidelines (WCAG) 2.1*. https://www.w3.org/TR/WCAG21/
 - AENOR. (2019). *UNE-EN 301549 V2.1.2: Requisitos de accesibilidad para productos y servicios TIC*.
+
+**Herramientas usadas**
+
+- Figma - diseño de interfaces y prototipado. https://figma.com
+- WAVE Web Accessibility Evaluation Tool - auditoria WCAG. https://wave.webaim.org/
+- Lighthouse (Chrome DevTools) - auditoria de accesibilidad y rendimiento
+- Heurio - evaluacion heuristica colaborativa. https://www.heurio.co/
+- WebGazer.js - eye tracking en navegador para gazemapping. https://webgazer.cs.brown.edu/
+- Surge.sh - deploy de aplicaciones estaticas. https://surge.sh
+- shadcn/ui - componentes React accesibles (Radix UI). https://ui.shadcn.com/
+
+**Plantillas y guiones del curso (DIU 2025/26)**
+
+- Guiones de practicas P1-P5 — [DIU3-DarkPatterns/UX_CaseStudy/GuionesPracticas](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/tree/master/GuionesPracticas)
+- Usability Review template — [P1/Templates](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/tree/master/P1/Templates)
+- User Research Plan template — [P1/Templates](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/tree/master/P1/Templates)
+- Accessibility Report template — [P5/Acceibility-Report-template.md](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P5/Acceibility-Report-template.md)
+- Usability Report template — [P5/Usability-Report-template.md](https://github.com/DIU3-DarkPatterns/UX_CaseStudy/blob/master/P5/Usability-Report-template.md)
 
 ---
 
